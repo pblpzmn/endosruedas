@@ -1,0 +1,184 @@
+body{
+	 /*background-color: black;*/
+	/*background-color: #0A314F;*/ /*azul*/
+	/*background-color: #70BF59;*/ /*verde*/
+	 margin: 0px 0px 0px 0px;
+	 padding: 0px 0px 0px 0px;
+}
+body,html,label,a,p,ul,li,label,strong,span,input{
+	 font-family: 'Helvetica';
+	 font-size: 13px ;
+	 /*color: white; */
+	color: black;
+	 
+}
+/*.container{
+ min-height:100%;
+} */
+.backgroundImg{
+	  background: url(../img/home.png) no-repeat center bottom scroll; 
+	  display:block;
+	  height: 400px;
+	  width: 640px;
+	  
+	  
+}
+.icon-container{
+	 margin: 10px 0px 20px 140px;
+	  
+}
+.motorcycle-icon{
+	background: url(../img/bot2.png) no-repeat center top scroll;
+	height: 215px;
+	width:215px;
+	position: relative;
+	top: 150px;
+	left: 28px;
+	-webkit-animation: rotate 120s linear 0s infinite alternate;
+    animation: rotate 120s linear 0s infinite alternate;
+	
+}
+.bicycle-icon{
+	background: url(../img/bot1.png) no-repeat center top  scroll;
+	height: 215px;
+	width:215px;
+	position: relative;
+	top: 150px;
+	left: 48px;
+    
+    -webkit-animation: rotate 120s linear 0s infinite alternate;
+    animation: rotate 120s linear 0s infinite alternate;
+    
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rotate {
+  100% {-webkit-transform:rotate(90deg);}
+}
+
+/* Standard syntax */
+@keyframes rotate {
+    100% {transform:rotate(90deg);}
+}
+
+
+.motorcycle-icon:hover{
+	background: url(../img/boton2Hover.png) no-repeat center top scroll;
+	height: 215px;
+	width:215px;
+	position: relative;
+	top: 150px;
+	left: 26px;
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    -webkit-animation: 0.5s;
+    animation: 0.5s;
+}
+.bicycle-icon:hover{
+	background: url(../img/boton1Hover.png) no-repeat center top  scroll;
+	height: 215px;
+	width:215px;
+	position: relative;
+	top: 151px;
+	left: 50px;
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    -webkit-animation: 0.5s;
+    animation: 0.5s;
+}
+
+.logo{
+	  background: url(../img/en-dos-ruedas-negro.png) no-repeat center bottom scroll;
+	  width: 300px;
+	  height:150px;	  
+}
+.user-menu{
+	background-color: black;	
+}
+.menu {
+	/*background-color: #28B04B; */
+	/*color: white; */
+}
+.navbar{
+	margin-bottom: 20px;
+}
+
+.right-menu{
+float: right;
+}
+.text-white{
+	color: white;
+}
+.text-white label, .text-white a, .text-white p, .text-white ul, .text-white li, .text-white label, .text-white strong, .text-white span, .text-white input{
+	color: white;
+}
+.text-small{
+	font-size:small;
+}
+.info-row{
+ 	background-color: #3D3D3D;	
+ 	margin-top: 15px;
+}
+
+footer{
+	 display:block;	
+	 height: 80px;
+	 /*background-color: #119149;*/
+	 background-color: #28B04B;
+	 padding-top: 10px;
+}
+
+.divider-vertical {
+    height: 40px;
+    margin: 0 9px;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #FFF;
+}
+
+/**start image preview on upload files**/
+.prev_container{
+	overflow: auto;
+	width: 300px;
+	height: 135px;
+}
+
+.prev_thumb{
+	margin: 10px;
+	height: 100px;
+}
+
+/**end image preview on upload files**/
+
+label.error{
+	color: red;
+}
+.galery{
+	/*width: 350px;*/
+	height: 395px;
+}
+.galeryImg{
+	width: 295px;
+	height: 235px;
+	border: 4px solid #3D3D3D;
+}
+
+.carousel-inner img{
+	width: 100%;
+	
+}
+
+.row.comments label, .row.comments h3{
+	color: #FC9200;
+}
+.small-height{
+	height: 35px;
+}
+
+.margin-link{
+margin :0px 5px 0px 5px;	
+}
