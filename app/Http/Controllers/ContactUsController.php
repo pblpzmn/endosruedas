@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Email;
 use Redirect;
+use Mail;
 class ContactUsController extends BaseController {
 
 	public function contact_us(Request $request) {
