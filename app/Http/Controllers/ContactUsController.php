@@ -1,11 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Email
+use Redirect
 class ContactUsController extends BaseController {
 
 	public function contact_us(Request $request) {
 
-		$input = Input::all();
+		$input = $request->all();
 		$messages = Email::validate($input);
 
 		//         print_r($messages); die;
@@ -24,7 +27,7 @@ class ContactUsController extends BaseController {
 			foreach ($messages->all('<li>:message</li>') as $message) {
 				$messagesView .= $message;
 			}
-			Input::flash();
+			$request->flash();
 			// to show same data on inputs if fails
 			return Redirect::to('contactanos') -> with(Constant::MESSAGE_ERROR, $messagesView) -> withInput();
 		}
