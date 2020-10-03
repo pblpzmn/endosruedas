@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'info@endosruedas.com.ec', 'name' => 'En 2 Ruedas'],
 
     /*
     |--------------------------------------------------------------------------

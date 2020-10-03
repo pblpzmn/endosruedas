@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Email;
 use Redirect;
 use Mail;
+use App\Models\Constant;
 class ContactUsController extends BaseController {
 
 	public function contact_us(Request $request) {
@@ -15,7 +16,7 @@ class ContactUsController extends BaseController {
 		//         print_r($messages); die;
 		if ($messages == null) {
 			$subject = 'Nuevo mensaje';//$input['subject'];
-	    	$toEmail = array('elpablopazmino@gmail.com'); //$input['toEmail'];
+	    	$toEmail = array('contacto@endosruedas.com.ec'); //$input['toEmail'];
 	    	$toName = 'nuevo usuario';//$input['toName'];
 			Mail::send(  array('html' =>'emails.contact_buyer'), $input, function($message) use ($toEmail, $toName,  $subject)
 	    	{
