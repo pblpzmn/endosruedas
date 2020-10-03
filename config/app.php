@@ -6,7 +6,7 @@ function  pre($input , $die=true){
     }
 }
 function  server_root(){
-    return "https://".$_SERVER['SERVER_NAME'];
+    return "http://".$_SERVER['SERVER_NAME'];
 }
 return [
 
