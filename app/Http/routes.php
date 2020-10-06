@@ -3,7 +3,7 @@ use App\Models\Motorcycle;
 use App\Models\Bicycle;
 use App\Models\Catalog;
 use App\Models\Constant;
-
+use App\Models\UserProduct;
 
 Route::get('login', function() {
 	return View::make('login');
@@ -62,8 +62,17 @@ Route::group(array('before' => 'auth'), function() {
 		$product = $bicycle->findBicycle($id);
 		$product['action'] = "editar/bicicleta/";
 		$product['actionType'] = 2;
+
+		$userProduct = new UserProduct();
+		$isUserProductOwner = $userProduct->isUserProductOwner( $id , Constant::BICYCLE);
 		
-		return filtersBicycle($product);
+		if ( $isUserProductOwner ){
+			return filtersBicycle($product);
+		}else{
+			return Redirect::to('comprar/bicicletas');
+		}
+		
+		
 		
 
 	});
@@ -88,7 +97,14 @@ Route::group(array('before' => 'auth'), function() {
 		$product['action'] = "editar/motocicleta/";
 		$product['actionType'] = 2;
 		
-		return filtersMotorcycle($product);
+		$userProduct = new UserProduct();
+		$isUserProductOwner = $userProduct->isUserProductOwner( $id , Constant::MOTORCYCLE );
+		
+		if ( $isUserProductOwner ){
+			return filtersMotorcycle($product);
+		}else{
+			return Redirect::to('comprar/motocicletas');
+		}		
 		
 	});
 	Route::post( 'editar/motocicleta/{id}' , 'MotorcycleController@edit');

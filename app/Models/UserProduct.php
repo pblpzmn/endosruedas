@@ -78,4 +78,22 @@ class UserProduct extends Model {
 		 return $this->findUserProduct()->paginate(Constant::GALERY_PAGINATION);
 	}
 	
+	public function isUserProductOwner($prodId , $type ) {
+		 
+		$userProductList = $this->publicationUserList();
+		
+		$prodIds = array();
+		foreach ($userProductList as &$productObj) {
+			if ($productObj->type == $type ){
+				array_push( $prodIds , $productObj->product_id );
+			}
+		}
+
+		if (in_array($prodId, $prodIds) ){
+			return true;
+		}else{
+			return false;
+		}		
+	}
+
 }
