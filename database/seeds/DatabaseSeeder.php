@@ -66,6 +66,7 @@ class DatabaseSeeder extends Seeder {
 		Catalog::create(array('name' => 'Down Hill','description' => 'Down Hill','catalog_type_id'=>Constant::CATALOG_BICYCLE_TYPE_ID));
 		Catalog::create(array('name' => 'Trial','description' => 'Trial','catalog_type_id'=>Constant::CATALOG_BICYCLE_TYPE_ID));
 		Catalog::create(array('name' => 'Ruta','description' => 'Ruta','catalog_type_id'=>Constant::CATALOG_BICYCLE_TYPE_ID));
+		Catalog::create(array('name' => 'Otro','description' => 'Otro','catalog_type_id'=>Constant::CATALOG_BICYCLE_TYPE_ID));
 		
 		//  marca bicicleta
 		Catalog::create(array('name' => 'Apace','description' => 'Apace','catalog_type_id'=>Constant::CATALOG_BICYCLE_BRAND_ID));
@@ -359,6 +360,7 @@ class DatabaseSeeder extends Seeder {
 		Catalog::create(array('name' => 'Speedone','description' => 'Speedone','catalog_type_id'=>Constant::CATALOG_BICYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Token','description' => 'Token','catalog_type_id'=>Constant::CATALOG_BICYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Wheeler','description' => 'Wheeler','catalog_type_id'=>Constant::CATALOG_BICYCLE_BRAND_ID));
+		Catalog::create(array('name' => 'Otro','description' => 'Otro','catalog_type_id'=>Constant::CATALOG_BICYCLE_BRAND_ID));
 		
 		// Catalogo ciudades
 		Catalog::create(array('name' => 'Guayaquil','description' => 'Guayaquil','catalog_type_id'=>Constant::CATALOG_CITY_ID));
@@ -579,7 +581,7 @@ class DatabaseSeeder extends Seeder {
 		Catalog::create(array('name' => 'El Pan','description' => 'El Pan','catalog_type_id'=>Constant::CATALOG_CITY_ID));
 		Catalog::create(array('name' => 'Nuevo Rocafuerte','description' => 'Nuevo Rocafuerte','catalog_type_id'=>Constant::CATALOG_CITY_ID));
 		
-
+		#Marcas de motos
 		Catalog::create(array('name' => 'Motomel','description' => 'Motomel','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Zanella','description' => 'Zanella','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Siambretta','description' => 'Siambretta','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
@@ -610,6 +612,7 @@ class DatabaseSeeder extends Seeder {
 		Catalog::create(array('name' => 'Scorpa','description' => 'Scorpa','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Sherco','description' => 'Sherco','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Solex','description' => 'Solex','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
+		Catalog::create(array('name' => 'Shineray','description' => 'Shineray','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'BMW','description' => 'BMW','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'Horex','description' => 'Horex','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
 		Catalog::create(array('name' => 'MZ','description' => 'MZ','catalog_type_id'=>Constant::CATALOG_MOTORCYCLE_BRAND_ID));
@@ -718,6 +721,7 @@ class DatabaseSeeder extends Seeder {
 		Catalog::create(array('name' => 'Sidecar','description' => 'Sidecar','catalog_type_id'=>Constant::CATALOG_MOTO_TYPE_ID ));
 		Catalog::create(array('name' => 'Streetfighter (motocicleta)','description' => 'Streetfighter (motocicleta)','catalog_type_id'=>Constant::CATALOG_MOTO_TYPE_ID ));
 		Catalog::create(array('name' => 'Trial','description' => 'Trial','catalog_type_id'=>Constant::CATALOG_MOTO_TYPE_ID ));
+		Catalog::create(array('name' => 'Otro','description' => 'Otro','catalog_type_id'=>Constant::CATALOG_MOTO_TYPE_ID ));
 				
 		
 		

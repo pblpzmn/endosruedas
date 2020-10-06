@@ -109,6 +109,20 @@ Bicicletas y Motocicletas
 			      {!! Form::file('files[picture3]', array('multiple'=>true, 'id' => 'file3' ,'class'=>"file" )); !!}
 			    </div>
 			  </div>
+			  <div class="form-group">  
+			    {!! Form::label('', '', array('class' => 'col-sm-1 control-label')); !!}
+			    <div class="col-sm-3">
+			      {!! Form::file('files[picture4]', array('multiple'=>true, 'id' => 'file4', 'class'=>"file" )); !!}
+			    </div>
+			    {!! Form::label('', '', array('class' => 'col-sm-1 control-label')); !!}
+			    <div class="col-sm-3">
+			      {!! Form::file('files[picture5]', array('multiple'=>true, 'id' => 'file5','class'=>"file" )) !!}
+			    </div>
+			    {!! Form::label('', '', array('class' => 'col-sm-1 control-label')); !!}
+			    <div class="col-sm-3">
+			      {!! Form::file('files[picture6]', array('multiple'=>true, 'id' => 'file6' ,'class'=>"file" )); !!}
+			    </div>
+			  </div>
 			  <div class='hidden-phone hidden-tablet form-group ' id="previewBicycleGroup">
 			  	  <div class="col-sm-1">
 			  	  Imagenes
@@ -125,6 +139,21 @@ Bicicletas y Motocicletas
 			  	  </div>
 				  <div class="col-sm-3">
 				  	<div id="prev_file3"></div><br/>
+				  </div>
+			  	  <div class="col-sm-1">
+			  	  </div>
+				  <div class="col-sm-3">
+					  <div id="prev_file4"></div><br/>
+				  </div>
+				  <div class="col-sm-1">
+			  	  </div>
+				  <div class="col-sm-3">
+				  	<div id="prev_file5"></div><br/>
+				  </div>
+				  <div class="col-sm-1">
+			  	  </div>
+				  <div class="col-sm-3">
+				  	<div id="prev_file6"></div><br/>
 				  </div>
 			  </div>
 			  <div class="form-group">

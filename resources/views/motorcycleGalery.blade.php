@@ -63,9 +63,9 @@ Galería Motocicletas
 		@foreach ($productList as $product)
 		 <div class="col-md-6 col-lg-4 galery" > 
 		 	@for ($i = 0; $i < 1; $i++)
-		 		@if (count($product->has_picture) >= 1)
+		 		@if ( $product->hasPicture()  )
 					<a href={!!server_root()."/vender/motocicleta/".$product->id!!}>
-						{!! HTML::image($product->has_picture[$i]->path, 'alt-text', array('class'=>'galeryImg')) !!}
+						{!! HTML::image($product->hasPicture()[$i]->path, 'alt-text', array('class'=>'galeryImg')) !!}
 					</a>
 				@endif
 			@endfor

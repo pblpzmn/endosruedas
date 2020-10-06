@@ -1,9 +1,10 @@
 <?php
 namespace App\Models;
-
-
-use \Auth;
 use Illuminate\Database\Eloquent\Model;
+
+use \Validator;
+use \Auth;
+
 class Motorcycle extends Model {
 
 	protected $table = 'motorcycles';
@@ -97,7 +98,7 @@ class Motorcycle extends Model {
 	}
 
  	public function hasPicture() {
-        return $this->hasMany('App\Models\Picture','product_id')->whereType(Constant::MOTORCYCLE);
+        return $this->hasMany('App\Models\Picture','product_id')->whereType(Constant::MOTORCYCLE)->get();
     }
     
     public function belongsToUserProduct() {
@@ -137,6 +138,7 @@ class Motorcycle extends Model {
     
     public function findMotorcycle($id) {
 		return Motorcycle::find($id);
+		//pre($bicycle->hasPicture());
 		// ->with(array('hasPicture'));
 	}
 

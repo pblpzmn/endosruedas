@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Motorcycle;
 use App\Models\Catalog;
 use App\Models\Constant;
+use Redirect;
 
 use Illuminate\Support\Facades\View;
 class MotorcycleController extends BaseController {
@@ -12,8 +13,8 @@ class MotorcycleController extends BaseController {
 	/*create*/
 	public function sellMotorcycle(Request $request) {
 
-		$this->getPictureMessage();
-		$this->getProductMessage(new Motorcycle());
+		$this->getPictureMessage($request);
+		$this->getProductMessage(new Motorcycle(),  $request);
 
 		if ($this -> messagesView == null) {
 			$input = $request->all();//Input::all();
@@ -22,7 +23,7 @@ class MotorcycleController extends BaseController {
 			return Redirect::to('nuevo/publicar/motocicleta') -> with(Constant::MESSAGE_SUCCESS, 'Publicacion exitosa') -> withInput();
 
 		} else {
-			Input::flash();
+			$request -> flash();
 			// to show same data on imputs if fails
 			return Redirect::to('nuevo/publicar/motocicleta') -> with(Constant::MESSAGE_ERROR, $this -> messagesView) -> withInput();
 		}
@@ -31,8 +32,8 @@ class MotorcycleController extends BaseController {
 
 	public function edit(Request $request, $id) {
 
-		$this->getPictureMessage();
-		$this->getProductMessage(new Motorcycle());
+		$this->getPictureMessage($request);
+		$this->getProductMessage(new Motorcycle(),  $request);
 
 		if ($this -> messagesView == null) {
 			$input = $request->all();//Input::all();
@@ -42,11 +43,10 @@ class MotorcycleController extends BaseController {
 			return Redirect::to('listapublicaciones' ) -> with(Constant::MESSAGE_SUCCESS,'Edición exitosa') -> withInput();
 
 		} else {
-			Input::flash();
+			$request -> flash();
 			// to show same data on imputs if fails
 			return Redirect::to('editar/motocicleta/'.$id) -> with(Constant::MESSAGE_ERROR, $this -> messagesView) -> withInput();
 		}
-
 
 	}
 	
@@ -83,7 +83,7 @@ class MotorcycleController extends BaseController {
 		}
 		
 		$yearList = array(0=>'Seleccione' );
-		for ($i=2015; $i >1970 ; $i--) {
+		for ($i=2021; $i >1970 ; $i--) {
 			$yearList[$i] = $i;
 		}
 		

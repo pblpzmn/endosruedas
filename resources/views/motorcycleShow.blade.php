@@ -185,7 +185,7 @@ Motocicletas
 						<div class="col-md-4 col-lg-6" >	
 							<p class=" text-left">
 								<strong>Combustible:</strong>
-								{!! Constant::gasName()[$product->gas] !!}
+								{!! $constant::gasName()[$product->gas] !!}
 							</p>
 						</div>
 						

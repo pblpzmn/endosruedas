@@ -149,7 +149,7 @@ function filtersBicycle($product){
 		$speedList[$i] = $i;
 	}
 	$yearList = array(0=>'Seleccione' );
-	for ($i=2015; $i >1970 ; $i--) {
+	for ($i=2021; $i >1970 ; $i--) {
 		$yearList[$i] = $i;
 	}
 	

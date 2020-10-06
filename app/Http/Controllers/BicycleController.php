@@ -25,7 +25,7 @@ class BicycleController extends BaseController {
 			return Redirect::to('nuevo/publicar/bicicleta' ) -> with(Constant::MESSAGE_SUCCESS,'Publicacion exitosa') -> withInput();
 
 		} else {
-			Input::flash();
+			$request -> flash();
 			// to show same data on imputs if fails
 			return Redirect::to('nuevo/publicar/bicicleta') -> with(Constant::MESSAGE_ERROR, $this -> messagesView) -> withInput();
 		}
@@ -36,8 +36,8 @@ class BicycleController extends BaseController {
 	
 	public function edit($id, Request $request) {
 
-		$this->getPictureMessage();
-		$this->getProductMessage(new Bicycle());
+		$this->getPictureMessage($request);
+		$this->getProductMessage(new Bicycle() , $request);
 
 		if ($this -> messagesView == null) {
 			$input = $request->all();//Input::all();
@@ -47,7 +47,7 @@ class BicycleController extends BaseController {
 			return Redirect::to('listapublicaciones' ) -> with(Constant::MESSAGE_SUCCESS,'Edición exitosa') -> withInput();
 
 		} else {
-			Input::flash();
+			$request -> flash();
 			// to show same data on imputs if fails
 			return Redirect::to('editar/bicicleta/'.$id) -> with(Constant::MESSAGE_ERROR, $this -> messagesView) -> withInput();
 		}
