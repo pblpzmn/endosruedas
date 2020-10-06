@@ -1,4 +1,4 @@
-@extends('layouts.left_side')
+@extends('layouts.search_box')
 
 @section('title')
 @parent
@@ -8,10 +8,10 @@ Bicicletas y Motocicletas
 @section('content')
 
 
-	<div class="col-md-9 visible-desktop">
-		<div class="backgroundImg icon-container ">
+	<div class=" visible-desktop">
+		<div class="backgroundImg  ">
 			
-			<div class="col-md-6 ">
+			<!--div class="col-md-6 ">
 				<a href="{!!server_root()!!}/comprar/motocicletas" class="motorcycle-icon img-responsive" ></a>
 				
 			</div>
@@ -19,7 +19,7 @@ Bicicletas y Motocicletas
 				
 				<a href="{!!server_root()!!}/comprar/bicicletas" class="bicycle-icon img-responsive" ></a>
 				
-			</div>
+			</div-->
 		</div>	
 	</div>	
 	

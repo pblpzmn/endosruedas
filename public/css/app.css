@@ -18,8 +18,8 @@ body,html,label,a,p,ul,li,label,strong,span,input{
 .backgroundImg{
 	  background: url(../img/home.png) no-repeat center bottom scroll; 
 	  display:block;
-	  height: 400px;
-	  width: 640px;
+	  height: 255px;
+	  width: auto;
 	  
 	  
 }

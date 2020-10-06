@@ -154,9 +154,13 @@
 		@yield('messages')
 		
 		<!-- Content -->
-		<div class="container">
-			@yield('left_side')
+		<div class="full">
+
 			@yield('content')
+		</div>
+		<div class="container">
+			@yield('search_box')
+
 		</div>
 		<div class="info-row text-white">
 			<div class="container">

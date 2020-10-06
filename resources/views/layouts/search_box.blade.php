@@ -1,5 +1,5 @@
 @extends('layouts.messages')
-@section('left_side')
+@section('search_box')
 {!! HTML::script('js/jquery/searchableSelect/bootstrap-select.min.js') !!}
 {!! HTML::style('css/searchableSelect/bootstrap-select.min.css'); !!}
 {!! HTML::script('js/jquery/jquery.preimage.js') !!}
