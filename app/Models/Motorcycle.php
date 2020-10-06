@@ -56,7 +56,7 @@ class Motorcycle extends Model {
 	public function edit($input = array()) {
 		// pre($input);
 		// saving products
-		$input['status'] = Constant::ACTIVE;
+		//$input['status'] = Constant::ACTIVE;
 
 		// saving motorcycle
 		$motorcycle = Motorcycle::find($input['id'] );

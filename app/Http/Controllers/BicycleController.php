@@ -115,7 +115,7 @@ class BicycleController extends BaseController {
 		//pre( $product->hasPicture() );
  		//pre($product->hasPicture());
  		$user = $product->belongsToUserProduct->belongsToUser;
-		return View::make('bicycleShow', array('product' => $product, 'user'=> $user ,'comments' => $bicycle->comments));
+		return View::make('bicycleShow', array('product' => $product, 'user'=> $user ,'comments' => $bicycle->comments, 'p_status' => $status ));
 
 	}
 	public function searchBicycles($id) {

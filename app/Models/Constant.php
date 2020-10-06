@@ -21,6 +21,7 @@ class Constant {
 	/* Product status */
 	const INACTIVE = 0;
 	const ACTIVE = 1;
+	const SOLD = 2;
 
 	public static function statusName() {
 		return $values = array(self::INACTIVE => 'Inactivo', self::ACTIVE => 'Activo');

@@ -32,7 +32,7 @@ class Bicycle extends Model {
 	public function insertBicicle($input = array()) {
 		// pre($input);
 		// saving products
-		$input['status'] = Constant::ACTIVE;
+		//$input['status'] = Constant::ACTIVE;
 
 		// saving bicycle
 		$bicycle = Bicycle::create($input);
@@ -54,7 +54,7 @@ class Bicycle extends Model {
 	public function edit($input = array()) {
 		// pre($input);
 		// saving products
-		$input['status'] = Constant::ACTIVE;
+		//$input['status'] = Constant::ACTIVE;
 
 		// saving bicycle
 		$bicycle = Bicycle::find($input['id'] );
@@ -111,6 +111,7 @@ class Bicycle extends Model {
 	public function findPaginatedBicycles($input = array()) {
 		// return $this->findBicyclesCreateQuery()->paginate(Constant::GALERY_PAGINATION);
 		$query = $this;	
+		//$query = $query->status( Constant::ACTIVE );	
 		if(!empty($input['brand'])){
 			$query = $query->brand($input['brand']);	
 		}

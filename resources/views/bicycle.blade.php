@@ -30,15 +30,22 @@ Bicicletas y Motocicletas
 				  Edita tu bicicleta
 				  <?php }?>
 			</h2>
-		  
-				
-			{!! Form::open(array('url' => $product->action.$product->id ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
+		  	{!! Form::open(array('url' => $product->action.$product->id ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
+				<?php if ($product->actionType<>1){ ?>
 				<div class="form-group">
+		  		{!! Form::label('status', 'Estado', array('class' => 'col-sm-1 control-label')); !!}
+			    <div class="col-sm-2">
+			      {!! Form::select('status' , $status, $product->status, array('class' => 'form-control' )) !!}
+			    </div>
+				</div>
+				<?php }?>
+			
+			  <div class="form-group">
 		  		{!! Form::label('title', 'Título', array('class' => 'col-sm-1 control-label')); !!}
 			    <div class="col-sm-11">
 			      {!! Form::text('title' , $product->title, array('class' => 'form-control','placeholder'=>'Título del anuncio' )) !!}
 			    </div>
-				</div>
+			  </div>
 				
 			  <div class="form-group">
 			  		{!! Form::label('is_new', 'Articulo', array('class' => 'col-sm-1 control-label')); !!}
