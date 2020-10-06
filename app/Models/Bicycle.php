@@ -111,7 +111,7 @@ class Bicycle extends Model {
 	public function findPaginatedBicycles($input = array()) {
 		// return $this->findBicyclesCreateQuery()->paginate(Constant::GALERY_PAGINATION);
 		$query = $this;	
-		//$query = $query->status( Constant::ACTIVE );	
+		$query = $query->status( Constant::ACTIVE.' OR '.Constant::STOLEN);
 		if(!empty($input['brand'])){
 			$query = $query->brand($input['brand']);	
 		}
@@ -162,6 +162,9 @@ class Bicycle extends Model {
 		// ->with(array('hasPicture'));
 	}
 	
+	public function scopeStatus($query,$condition) {
+	  return $query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+	}	
 	public function scopeBrand($query,$condition) {
 	  return $query->whereBrand($condition);
 	}

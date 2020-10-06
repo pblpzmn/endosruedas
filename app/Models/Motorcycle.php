@@ -117,6 +117,7 @@ class Motorcycle extends Model {
 //		return $this->findMotorcyclesCreateQuery($input)->paginate(Constant::GALERY_PAGINATION);
 
 		$query = $this;	
+		$query = $query->status( Constant::ACTIVE );
 		if(!empty($input['brand'])){
 			$query = $query->brand($input['brand']);	
 		}
@@ -142,7 +143,10 @@ class Motorcycle extends Model {
 		// ->with(array('hasPicture'));
 	}
 
-	
+
+	public function scopeStatus($query,$condition) {
+	  return $query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+	}	
 	public function scopeBrand($query,$condition) {
 	  return $query->whereBrand($condition);
 	}

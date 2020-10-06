@@ -22,6 +22,7 @@ class Constant {
 	const INACTIVE = 0;
 	const ACTIVE = 1;
 	const SOLD = 2;
+	const STOLEN = 3;
 
 	public static function statusName() {
 		return $values = array(self::INACTIVE => 'Inactivo', self::ACTIVE => 'Activo');

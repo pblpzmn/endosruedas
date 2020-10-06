@@ -172,10 +172,11 @@ function filtersBicycle($product){
 	for ($i=0; $i < count($city) ; $i++) {
 		$cityList[$city[$i]['id']] = $city[$i]['name'];
 	}
-	$status = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo',  Constant::SOLD => 'Vendido');
+	$editStatus = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo',  Constant::SOLD => 'Vendido', Constant::STOLEN => 'Robada');
+	$newStatus = array( Constant::ACTIVE => 'Activo', Constant::STOLEN => 'Robada');	
 	return View::make('bicycle', array('product'=>$product,'is_new_options' => Constant::productValueName() ,
 			'yearList'=>$yearList, 'speedList'=>$speedList, 'brandList' => $brandList, 'typeList' => $typeList ,
-			'sizeList' => Constant::bikeSizeName() , 'cityList' => $cityList , 'status' => $status));
+			'sizeList' => Constant::bikeSizeName() , 'cityList' => $cityList , 'editStatus' => $editStatus, 'newStatus' => $newStatus ));
 	
 }
 
@@ -213,10 +214,11 @@ function filtersMotorcycle($product){
 	
 	$gasList = array(Constant::GAS => Constant::gasName()[Constant::GAS],
 			Constant::DIESEL => Constant::gasName()[Constant::DIESEL ] );
-	$status = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo',  Constant::SOLD => 'Vendido');	
+	$editStatus = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo', Constant::SOLD => 'Vendido', Constant::STOLEN => 'Robada');
+	$newStatus = array( Constant::ACTIVE => 'Activo', Constant::STOLEN => 'Robada');
 	return View::make('motorcycle', array('product'=>$product,'is_new_options' => Constant::productValueName()
 			, 'yearList'=>$yearList, 'speedList'=>$speedList ,
-			'brandList' => $brandList ,'typeList' => $typeList  ,'cityList' => $cityList , 'gasList' => $gasList, 'status' => $status));
+			'brandList' => $brandList ,'typeList' => $typeList  ,'cityList' => $cityList , 'gasList' => $gasList, 'editStatus' => $editStatus, 'newStatus' => $newStatus ));
 
 }
 

@@ -29,15 +29,17 @@ Bicicletas y Motocicletas
 				  <?php }?>
 				</h2>
 		   {!! Form::open(array('url' => $product->action.$product->id ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
-				<?php if ($product->actionType<>1){ ?>
+
 				<div class="form-group">
 		  		{!! Form::label('status', 'Estado', array('class' => 'col-sm-1 control-label')); !!}
 			    <div class="col-sm-2">
-			      {!! Form::select('status' , $status, $product->status, array('class' => 'form-control' )) !!}
+			      <?php if ($product->actionType<>1){ ?>
+			      	{!! Form::select('status' , $editStatus, $product->status, array('class' => 'form-control' )) !!}
+			      <?php }else{?> 
+			      	{!! Form::select('status' , $newStatus, $product->status, array('class' => 'form-control' )) !!}
+			      <?php }?>
 			    </div>
 				</div>
-				<?php }?>
-			  
 				
 				<div class="form-group">
 		  		{!! Form::label('title', 'Título', array('class' => 'col-sm-1 control-label')); !!}
