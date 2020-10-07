@@ -5544,8 +5544,8 @@ button.close {
   text-indent: -999px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #fff;
+  background-color: #28B04B;
+  border: 1px solid #28B04B;
   border-radius: 10px;
 }
 .carousel-indicators .active {
