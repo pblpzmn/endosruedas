@@ -93,9 +93,10 @@ body,html,label,a,p,ul,li,label,strong,span,input{
 }
 
 .logo{
-	  background: url(../img/en-dos-ruedas-negro.png) no-repeat center bottom scroll;
-	  width: 300px;
-	  height:150px;	  
+	background: url(../img/en-dos-ruedas-negro.png) no-repeat center bottom scroll;
+	width: 250px;
+	height: 150px;
+	display: block;
 }
 .user-menu{
 	background-color: black;	
@@ -107,9 +108,8 @@ body,html,label,a,p,ul,li,label,strong,span,input{
 .navbar{
 	margin-bottom: 20px;
 }
-
-.right-menu{
-float: right;
+.navbar-brand{
+	color: #28B04B !important;
 }
 .text-white{
 	color: white;
@@ -189,4 +189,16 @@ margin :0px 5px 0px 5px;
 
 .stolen{
 	color: red;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #28B04B;
+}
+.last-menu{
+    display: inline-block !important;
+    float: right !important;
 }

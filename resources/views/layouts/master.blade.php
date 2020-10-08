@@ -71,13 +71,10 @@
 						<li>
 							<a href="{!!server_root()!!}/contactanos">Contáctanos</a>
 						</li>
-						
+					</ul>
+					<ul class="nav navbar-nav last-menu">	
 						<?php if (Auth::check()){
 							?>
-
-							<li >
-								<!-- <a href="#">Link</a> -->
-							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle text-white"  data-toggle="dropdown">{!!Str::title(Auth::user() -> name) !!} 
 								<b class="caret"></b></a> 
@@ -96,7 +93,7 @@
 							</li>
 						<?php }else{ ?>
 						
-							<li>
+							<li >
 								<a class="text-white" href="{!!server_root()!!}/registro">Registro</a>
 							</li>
 							<li>
@@ -122,7 +119,7 @@
 			
 			<div class="row">
 				<div class="col-md-6 col-lg-6 hidden-phone">
-					<a href="{!!server_root()!!}"><div class="logo"></div></a>
+					<a class="logo" href="{!!server_root()!!}"></a>
 				</div>
 				<!-- <div class="visible-phone">
 					<a href="{!!server_root()!!}">Inicio</a>
