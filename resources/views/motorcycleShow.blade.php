@@ -14,7 +14,9 @@ Motocicletas
 	</div>
 	<div class="row">
 		 <div class="col-xs-12 col-md-4 col-lg-6">
-	 
+	 		<?php if ($product->status==$constant::STOLEN){ ?>
+	 			<h3 class="stolen">Motocicleta Robada, ayúdanos a encontrarla</h3>
+	 		<?php } ?>
 	  <!-- Start Carousel   -->
 			<div id="carousel-home" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->

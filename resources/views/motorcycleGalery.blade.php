@@ -1,3 +1,4 @@
+@inject('constant', 'App\Models\Constant')
 @extends('layouts.messages')
 
 @section('title')
@@ -61,7 +62,11 @@ Galería Motocicletas
 	</div>
 	<div class="row">
 		@foreach ($productList as $product)
+		
 		 <div class="col-md-6 col-lg-4 galery" > 
+		 	<?php if ($product->status==$constant::STOLEN){ ?>
+	 			<label class="stolen">Motocicleta Robada, ayúdanos a encontrarla</label>
+	 		<?php } ?>
 		 	@for ($i = 0; $i < 1; $i++)
 		 		@if ( $product->hasPicture()  )
 					<a href={!!server_root()."/vender/motocicleta/".$product->id!!}>
