@@ -64,16 +64,23 @@ Galería Motocicletas
 		@foreach ($productList as $product)
 		
 		 <div class="col-md-6 col-lg-4 galery" > 
+		 	<h4>{!! $product->title !!}</h4>
 		 	<?php if ($product->status==$constant::STOLEN){ ?>
 	 			<label class="stolen">Motocicleta Robada, ayúdanos a encontrarla</label>
 	 		<?php } ?>
-		 	@for ($i = 0; $i < 1; $i++)
-		 		@if ( $product->hasPicture()  )
+		 	@if ( $product->hasPicture()->count() >1 )
+		 		@for ($i = 0; $i < 1; $i++)
 					<a href={!!server_root()."/vender/motocicleta/".$product->id!!}>
 						{!! HTML::image($product->hasPicture()[$i]->path, 'alt-text', array('class'=>'galeryImg')) !!}
 					</a>
-				@endif
-			@endfor
+				
+				@endfor
+
+			@else
+				<a href={!!server_root()."/vender/motocicleta/".$product->id!!}>
+						{!! HTML::image("img/noMotoImg.png", 'alt-text', array('class'=>'galeryImg')) !!}
+				</a>
+			@endif
 			<p>marca: {!! $product->brand !!}</p>
 			<p>modelo: {!! $product->model !!}</p>
 			<p>precio: {!! $product->amount !!}</p>
