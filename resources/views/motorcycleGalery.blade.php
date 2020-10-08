@@ -68,7 +68,7 @@ Galería Motocicletas
 		 	<?php if ($product->status==$constant::STOLEN){ ?>
 	 			<label class="stolen">Motocicleta Robada, ayúdanos a encontrarla</label>
 	 		<?php } ?>
-		 	@if ( $product->hasPicture()->count() >1 )
+		 	@if ( $product->hasPicture()->count() > 0 )
 		 		@for ($i = 0; $i < 1; $i++)
 					<a href={!!server_root()."/vender/motocicleta/".$product->id!!}>
 						{!! HTML::image($product->hasPicture()[$i]->path, 'alt-text', array('class'=>'galeryImg')) !!}

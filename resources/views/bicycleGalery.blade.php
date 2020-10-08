@@ -64,7 +64,7 @@ Galería Bicicletas
 			<?php if ($product->status==$constant::STOLEN){ ?>
 	 		<label class="stolen">Bicicleta Robada, ayúdanos a encontrarla</label>
 	 		<?php } ?>
-			@if ( $product->hasPicture()->count() > 1   )
+			@if ( $product->hasPicture()->count() > 0   )
 		 		@for ($i = 0; $i < 1; $i++)
 					<a href={!!server_root()."/vender/bicicleta/".$product->id!!}>
 						{!! HTML::image($product->hasPicture()[$i]->path, 'alt-text', array('class'=>'galeryImg')) !!}

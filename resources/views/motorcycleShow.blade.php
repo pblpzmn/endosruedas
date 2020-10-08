@@ -38,7 +38,7 @@ Motocicletas
 				    @else
 				    	<div class="item">
 				    @endif
-				      <img src="../../{!!$picture->path!!}" class="img-responsive" alt="casas">
+				      <img src="../../{!!$picture->path!!}" class="img-responsive" alt="moto">
 				      <div class="carousel-caption">
 				        <!-- <h3>casa 4</h3> -->
 				      </div>
@@ -61,13 +61,13 @@ Motocicletas
 	
 		<div class="col-xs-12 col-md-4 col-lg-6">
 			<ul class="nav nav-tabs" id="product">
-			  <li class="active" id="buyingLi"><a href="#buying" data-toggle="tab" id="buyingTab">Compra</a></li>
-			  <li id="descriptionLi"><a href="#details" data-toggle="tab" id="descriptionTab">Detalles</a></li>
+			  <li class="active" id="descriptionLi"><a href="#details" data-toggle="tab" id="descriptionTab">Detalles</a></li>
+			  <li  id="buyingLi"><a href="#buying" data-toggle="tab" id="buyingTab">Compra</a></li>			  
 <!-- 				<li id="preguntasLi"><a href="#preguntas" data-toggle="tab" id="preguntasTab">Preguntas previas</a></li> -->
 			</ul>
 		
 			<div class="tab-content">
-			  <div class="tab-pane active" id="buying">
+			  <div class="tab-pane" id="buying">
 					
 					<div class="col-md-12 col-lg-12" >	
 						<strong>
@@ -114,7 +114,7 @@ Motocicletas
 					
 					{!! Form::close() !!}
 				</div>
-			  <div class="tab-pane" id="details">
+			  <div class="tab-pane active" id="details">
 				  	
 						<h4 class=" text-center">Datos de la motocicleta:</h4>
 							
