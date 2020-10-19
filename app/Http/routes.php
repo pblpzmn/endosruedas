@@ -27,15 +27,6 @@ Route::post('comprar/motocicletas', 'MotorcycleController@showMotorcycles');
 Route::get('vender/bicicleta/{id}', 'BicycleController@viewBicycle');
 Route::post('crear/comentario/{id}', 'CommentsController@create');
 Route::get('vender/motocicleta/{id}', 'MotorcycleController@viewMotorcycle');
-
-Route::before(function($request)
-{
-    if( ! Request::secure())
-    {
-        return Redirect::secure(Request::path());
-    }
-});
-
 // Por ultimo crearemos un grupo con el filtro auth.
 // Para todas estas rutas el usuario debe haber iniciado sesión.
 // En caso de que se intente entrar y el usuario haya iniciado session
