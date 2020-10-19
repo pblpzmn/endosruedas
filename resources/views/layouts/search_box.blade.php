@@ -1,8 +1,8 @@
 @extends('layouts.messages')
 @section('search_box')
-<script type="text/javascript" href="{{ secure_asset('js/jquery/searchableSelect/bootstrap-select.min.js') }}"></script>
-<link rel="stylesheet" href="{{ secure_asset('css/searchableSelect/bootstrap-select.min.css')}}"/>
-<script type="text/javascript" href="{{ secure_asset('js/jquery/jquery.preimage.js')}}"></script>
+{!! HTML::script('js/jquery/searchableSelect/bootstrap-select.min.js') !!}
+{!! HTML::style('css/searchableSelect/bootstrap-select.min.css'); !!}
+{!! HTML::script('js/jquery/jquery.preimage.js') !!}
 <div class="row">
 	<div class="col-md-3 ">
 		<div class="col-md-12 col-sm-12 ">  

@@ -6,10 +6,10 @@ Bicicletas y Motocicletas
 @stop
 
 @section('content')
-<script type="text/javascript" href="{{ secure_asset('js/jquery/searchableSelect/bootstrap-select.min.js') }}"></script>
+{!! HTML::script('js/jquery/searchableSelect/bootstrap-select.min.js') !!}
 
-<link rel="stylesheet" href="{{ secure_asset('css/searchableSelect/bootstrap-select.min.css'); }}">
-<script type="text/javascript" href="{{ secure_asset('js/jquery/jquery.preimage.js') }}"></script>
+{!! HTML::style('css/searchableSelect/bootstrap-select.min.css'); !!}
+{!! HTML::script('js/jquery/jquery.preimage.js') !!}
 <div class="container">
 		<h2 class="text-center">
 				  Publica tu bicicleta Robada para que la comunidad esté atenta, te ayuden a encontrarla y no la compren.<br>
