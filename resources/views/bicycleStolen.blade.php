@@ -11,6 +11,9 @@ Bicicletas y Motocicletas
 {!! HTML::style('css/searchableSelect/bootstrap-select.min.css'); !!}
 {!! HTML::script('js/jquery/jquery.preimage.js') !!}
 <div class="container">
+		<h2 class="text-center">
+				  Publica tu bicicleta Robada para que la comunidad esté atenta, te ayuden a encontrarla y no la compren.<br>
+		</h2>
 		<?php if (Auth::check()){ ?>
 		<ul class="nav nav-tabs" id="product">
 		  <li class="active" id="bicycleLi"><a  href="#bicycle" data-toggle="tab" id="bicycleTab">Bicicleta</a></li>
@@ -23,7 +26,7 @@ Bicicletas y Motocicletas
 
 		  <div class="tab-pane active" id="bicycle">
 			<h2>
-				  Publica tu bicicleta Robada.
+
 			</h2>
 		  	{!! Form::open(array('url' => $product->action.$product->id ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
 				
@@ -180,8 +183,7 @@ Bicicletas y Motocicletas
 			
 		  </div>
 	 	  <?php }else{ ?>
-				<h2 class="text-center">Publica tu bicicleta Robada para que la comunidad esté atenta, te ayuden a encontrarla y no la compren.<br>
-					<br>Para publicar <a class="h2" href="{!!server_root()!!}/registro"><u>regístrate</u></a> o 
+				<h2 class="text-center">Para publicar <a class="h2" href="{!!server_root()!!}/registro"><u>regístrate</u></a> o 
 					<a class="h2" href="{!!server_root()!!}/login"><u>inicia sesión</u></a> </h2>			
 		   <?php }?>
 </div>
