@@ -185,7 +185,7 @@ Bicicletas y Motocicletas
 			
 		  </div>
 	 	  <?php }else{ ?>
-				<h2 class="text-center">Para publicar <a class="h2" href="{!!server_root()!!}/registro"><u>registráte</u></a> o 
+				<h2 class="text-center">Para publicar <a class="h2" href="{!!server_root()!!}/registro"><u>regístrate</u></a> o 
 					<a class="h2" href="{!!server_root()!!}/login"><u>inicia sesión</u></a> </h2>			
 		   <?php }?>
 </div>

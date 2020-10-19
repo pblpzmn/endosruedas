@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use \Validator;
 use \Auth;
-
+use DB;
 
 class Bicycle extends Model {
 
@@ -111,7 +111,7 @@ class Bicycle extends Model {
 	public function findPaginatedBicycles($input = array()) {
 		// return $this->findBicyclesCreateQuery()->paginate(Constant::GALERY_PAGINATION);
 		$query = $this;	
-		$query = $query->status( Constant::ACTIVE.' OR '.Constant::STOLEN);
+		$query = $query->status();
 		if(!empty($input['brand'])){
 			$query = $query->brand($input['brand']);	
 		}
@@ -124,14 +124,28 @@ class Bicycle extends Model {
 		if(!empty($input['is_new'])){
 			$query = $query->new($input['is_new']);	
 		}
-		if(!empty($input['amount'])){
-			$query = $query->amount($input['amount']);	
-		}	
+		if(!empty($input['amountFrom']) || !empty($input['amountTo']) ){
+			if ( empty($input['amountFrom']) ){
+				$input['amountFrom'] = 0; 	
+			}
+			if ( empty($input['amountTo']) ) {
+				$input['amountTo'] = 100000000; 	
+			}
+			$query = $query->amount($input['amountFrom'], $input['amountTo']);	
+		}
+/*
+DB::enableQueryLog();
+
+$query->orderBy('created_at', 'desc')->paginate(Constant::GALERY_PAGINATION);
+
+$query = DB::getQueryLog();
+
+pre($query);*/
+
+		//$res = $query->orderBy('created_at', 'desc')->toSql();
+		//pre($res,false);
 		// $this->brand("shi")->paginate(Constant::GALERY_PAGINATION);
 		return $query->orderBy('created_at', 'desc')->paginate(Constant::GALERY_PAGINATION);
-		$queries = DB::getQueryLog();
-		$last_query = end($queries);
-		pre($last_query);
 		
 	}
 	
@@ -162,8 +176,10 @@ class Bicycle extends Model {
 		// ->with(array('hasPicture'));
 	}
 	
-	public function scopeStatus($query,$condition) {
-	  return $query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+	public function scopeStatus($query) {
+	  return $query->where(function ($query){//adds brackets ()
+	  		$query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+		});
 	}	
 	public function scopeBrand($query,$condition) {
 	  return $query->whereBrand($condition);
@@ -178,8 +194,9 @@ class Bicycle extends Model {
 	public function scopeNew($query,$condition) {
 	  return $query->whereIsNew( $condition);
 	}
-	public function scopeAmount($query,$condition) {
-	  return $query->whereAmount( $condition);
+	public function scopeAmount($query,$amountFrom, $amountTo) {
+	  return $query->whereBetween( 'amount', array($amountFrom, $amountTo) );
+	  //return $query->whereAmount($condition);
 	}
 
 	

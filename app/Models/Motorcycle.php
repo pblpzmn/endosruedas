@@ -117,7 +117,7 @@ class Motorcycle extends Model {
 //		return $this->findMotorcyclesCreateQuery($input)->paginate(Constant::GALERY_PAGINATION);
 
 		$query = $this;	
-		$query = $query->status( Constant::ACTIVE );
+		$query = $query->status( );
 		if(!empty($input['brand'])){
 			$query = $query->brand($input['brand']);	
 		}
@@ -130,9 +130,15 @@ class Motorcycle extends Model {
 		if(!empty($input['is_new'])){
 			$query = $query->new($input['is_new']);	
 		}
-		if(!empty($input['amount'])){
-			$query = $query->amount($input['amount']);	
-		}	
+		if(!empty($input['amountFrom']) || !empty($input['amountTo']) ){
+			if ( empty($input['amountFrom']) ){
+				$input['amountFrom'] = 0; 	
+			}
+			if ( empty($input['amountTo']) ) {
+				$input['amountTo'] = 100000000; 	
+			} 
+			$query = $query->amount($input['amountFrom'], $input['amountTo']);	
+		}
 		// $this->brand("shi")->paginate(Constant::GALERY_PAGINATION);
 		return $query->orderBy('created_at', 'desc')->paginate(Constant::GALERY_PAGINATION);
 	}
@@ -144,8 +150,10 @@ class Motorcycle extends Model {
 	}
 
 
-	public function scopeStatus($query,$condition) {
-	  return $query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+	public function scopeStatus($query) {
+	  return $query->where(function ($query){//adds brackets ()
+	  		$query->where('status', '=', Constant::ACTIVE)->orWhere('status', '=', Constant::STOLEN);
+		});
 	}	
 	public function scopeBrand($query,$condition) {
 	  return $query->whereBrand($condition);
@@ -160,9 +168,9 @@ class Motorcycle extends Model {
 	public function scopeNew($query,$condition) {
 	  return $query->whereIsNew( $condition);
 	}
-	public function scopeAmount($query,$condition) {
-	  return $query->whereAmount( $condition);
+	public function scopeAmount($query,$amountFrom, $amountTo) {
+	  return $query->whereBetween( 'amount', array($amountFrom, $amountTo) );
+	  //return $query->whereAmount($condition);
 	}
-	
 	
 }

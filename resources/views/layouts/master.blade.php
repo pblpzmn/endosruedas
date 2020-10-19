@@ -41,9 +41,21 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav">
-						<li>
-							<a href="{!!server_root()!!}/nuevo/publicar/bicicleta">Publica tu Bicicleta</a>
-						</li>
+						
+						
+						<li class="dropdown">
+								<a href="#" class="dropdown-toggle text-white"  data-toggle="dropdown">Publica tu Bicicleta
+								<b class="caret"></b></a> 
+								<ul class="dropdown-menu">
+									<li>
+										<a href="{!!server_root()!!}/nuevo/publicar/bicicleta">Publica tu Bicicleta</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="{!!server_root()!!}/nuevo/publicar/bicicletaRobada">Publica tu Bicicleta Robada</a>
+									</li>
+								</ul>
+							</li>						
 						<li>
 							<a href="{!!server_root()!!}/nuevo/publicar/motocicleta">Publica tu Motocicleta</a>
 						</li>
@@ -139,6 +151,9 @@
 						<h3 class="text-right hidden-phone">
 							Bicicletas y motocicletas.
 						</h3>
+						<h5 class="text-right stolen">
+							Publica tu bicicleta robada <a href="/nuevo/publicar/bicicletaRobada">aquí</a>
+						</h5>
 					</div>
 				</div>
 			</div>

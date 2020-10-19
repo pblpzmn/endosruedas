@@ -13,7 +13,7 @@ Galería Motocicletas
 {!! HTML::script('js/jquery/jquery.preimage.js') !!}
 <div class="container">
 	<div class="row">
-		<h3 class="text-center">Encuentra la motocicleta que tu necesitas</h3>
+		<h3 class="text-center">Encuentra la motocicleta que necesitas</h3>
 		<button class="btn btn-default text-right input-sm" onclick="$('#validateForm').toggle();">Filtros y busqueda</button>
 	</div>
 	<div class="row">

@@ -8,13 +8,13 @@
 		<div class="col-md-12 col-sm-12 ">  
 		<h4 class="text-center">Filtros</h4> 
 		
-				{!! Form::open(array('url' => 'comprar/motocicletas' ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
+				{!! Form::open(array('url' => 'comprar/bicicletas' ,'class' => 'form-horizontal' ,'files' => true, 'id'=>'validateForm')) !!}
 				  <div class="form-group">
 				  		{!! Form::label('is_new', 'Articulo', array('class' => 'col-sm-3 control-label')); !!}
 					    <div class="col-sm-9">
 					      {!! Form::select('product_type' , $product_type, '', array('class' => 'form-control ' , 'onChange' => 'productChanged(this)' )) !!}
 					    </div>
-				  		{!! Form::label('is_new', 'Articulo', array('class' => 'col-sm-3 control-label')); !!}
+				  		{!! Form::label('is_new', 'Estado', array('class' => 'col-sm-3 control-label')); !!}
 					    <div class="col-sm-9">
 					      {!! Form::select('is_new' , array('' => 'Seleccione')+ $is_new_options, '', array('class' => 'form-control ' )) !!}
 					    </div>
@@ -37,9 +37,17 @@
 					    <div class="col-sm-9">
 					      {!! Form::select('city' , $cityList, '', array('class' => 'form-control selectpicker')) !!}
 					    </div>
-						{!! Form::label('amount', 'Precio', array('class' => 'col-sm-3 control-label')); !!}
+						{!! Form::label('amountFrom', 'Precio:', array('class' => 'col-sm-12 ')); !!}
+						{!! Form::label('amountFrom', 'Desde', array('class' => 'col-sm-3 control-label')); !!}
+						<br>
 					    <div class="col-sm-9">
-					      {!! Form::text('amount' , '', array('class' => 'form-control','placeholder'=>'Precio' )) !!}
+					      {!! Form::text('amountFrom' , '', array('class' => 'form-control','placeholder'=>'Precio desde' )) !!}
+					    </div>
+						<br>
+						<br>
+					    {!! Form::label('amountTo', 'Hasta', array('class' => 'col-sm-3 control-label')); !!}
+					    <div class="col-sm-9">
+					      {!! Form::text('amountTo' , '', array('class' => 'form-control','placeholder'=>'Precio hasta' )) !!}
 					    </div>
 				   </div>
 				  
@@ -58,7 +66,7 @@
 $(function(){
   
   $( ".selectpicker" ).selectpicker();
-  $( ".bicycleFlag" ).hide();
+  $( ".motorcycleFlag" ).hide();
 });
 function productChanged(obj){
 	  if (obj.value == 1 ){

@@ -13,7 +13,7 @@ Galería Bicicletas
 {!! HTML::script('js/jquery/jquery.preimage.js') !!}
 <div class="container">
 	<div class="row">
-		<h3 class="text-center">Encuentra la bicicleta que tu necesitas</h3>
+		<h3 class="text-center">Encuentra la bicicleta que necesitas</h3>
 		<button class="btn btn-default text-right input-sm" onclick="$('#validateForm').toggle();">Filtros y busqueda</button>
 	</div>
 	</br>	

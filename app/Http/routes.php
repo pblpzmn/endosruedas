@@ -54,6 +54,16 @@ Route::group(array('before' => 'auth'), function() {
 		
 		
 	});
+	Route::get('nuevo/publicar/bicicletaRobada', function() {
+		
+		$product = new Bicycle();
+		$product['action'] = "vender/bicicleta";
+		$product['actionType'] = 1;
+		
+		return filtersStolenBicycle($product);
+		
+		
+	});
 	Route::post( 'vender/bicicleta', 'BicycleController@sellBicycle');
 	
 	Route::get('editar/bicicleta/{id}',function($id) {
@@ -191,6 +201,44 @@ function filtersBicycle($product){
 	$editStatus = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo',  Constant::SOLD => 'Vendido', Constant::STOLEN => 'Robada');
 	$newStatus = array( Constant::ACTIVE => 'Activo', Constant::STOLEN => 'Robada');	
 	return View::make('bicycle', array('product'=>$product,'is_new_options' => Constant::productValueName() ,
+			'yearList'=>$yearList, 'speedList'=>$speedList, 'brandList' => $brandList, 'typeList' => $typeList ,
+			'sizeList' => Constant::bikeSizeName() , 'cityList' => $cityList , 'editStatus' => $editStatus, 'newStatus' => $newStatus ));
+	
+}
+
+function filtersStolenBicycle($product){
+	
+	$speedList = array(0=>'Seleccione' );
+	for ($i=30; $i > 0; $i--) {
+		$speedList[$i] = $i;
+	}
+	$yearList = array(0=>'Seleccione' );
+	for ($i=2021; $i >1970 ; $i--) {
+		$yearList[$i] = $i;
+	}
+	
+	$brandList = array(0=>'Seleccione' );
+	
+	$catalog = new Catalog();
+	$brand = $catalog->findByCatalogType(Constant::CATALOG_BICYCLE_BRAND_ID);
+	for ($i=0; $i < count($brand) ; $i++) {
+		$brandList[$brand[$i]['id']] = $brand[$i]['name'];
+	}
+	
+	$typeList = array(0=>'Seleccione' );
+	$type = $catalog->findByCatalogType(Constant::CATALOG_BICYCLE_TYPE_ID);
+	for ($i=0; $i < count($type) ; $i++) {
+		$typeList[$type[$i]['id']] = $type[$i]['name'];
+	}
+	
+	$cityList = array(0=>'Seleccione' );
+	$city = $catalog->findByCatalogType(Constant::CATALOG_CITY_ID);
+	for ($i=0; $i < count($city) ; $i++) {
+		$cityList[$city[$i]['id']] = $city[$i]['name'];
+	}
+	$editStatus = array( Constant::ACTIVE => 'Activo',  Constant::INACTIVE => 'Inactivo',  Constant::SOLD => 'Vendido', Constant::STOLEN => 'Robada');
+	$newStatus = array( Constant::STOLEN => 'Robada');	
+	return View::make('bicycleStolen', array('product'=>$product,'is_new_options' => Constant::productValueName() ,
 			'yearList'=>$yearList, 'speedList'=>$speedList, 'brandList' => $brandList, 'typeList' => $typeList ,
 			'sizeList' => Constant::bikeSizeName() , 'cityList' => $cityList , 'editStatus' => $editStatus, 'newStatus' => $newStatus ));
 	

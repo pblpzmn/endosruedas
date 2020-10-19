@@ -23,7 +23,7 @@ Bicicletas y Motocicletas
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    {!! Form::label('', 'Tus teléfonos serán publicados para que puedan contactarte:',  array('class' => 'col-sm-12 ')); !!}
+			    {!! Form::label('', 'Tus números de contacto serán publicados únicamente en tus anuncios de venta de artículos para que los compradores te contacten.:',  array('class' => 'col-sm-12 ')); !!}
 			  </div>
 			  <div class="form-group">
 			    {!! Form::label('phone', 'Número de teléfono',  array('class' => 'col-sm-2 control-label')); !!}

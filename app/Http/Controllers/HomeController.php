@@ -61,7 +61,7 @@ class HomeController extends BaseController {
 		
 		
 		return View::make('home', array( 'is_new_options' => Constant::productValueName(),
-				'product_type' => array(Constant::MOTORCYCLE => Constant::MOTORCYCLE_NAME, Constant::BICYCLE => Constant::BICYCLE_NAME),
+				'product_type' => array(Constant::BICYCLE => Constant::BICYCLE_NAME ,Constant::MOTORCYCLE => Constant::MOTORCYCLE_NAME),
 				'bicycleBrandList' => $bicycleBrandList ,
 				'bicycleTypeList' => $bicycleTypeList  ,
 				'motorcycleBrandList' => $motorcycleBrandList ,
