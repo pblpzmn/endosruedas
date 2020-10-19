@@ -25,7 +25,7 @@
 									<td>
 										<a href="{{server_root()}}">
 
-											<img src="www.endosruedas.com.ec/img/en-dos-ruedas-negro.png" alt="www.endosruedas.com.ec" width="150" height="80" style="display: block;" />
+											<img src="https://www.endosruedas.com.ec/img/en-dos-ruedas-negro.png" alt="www.endosruedas.com.ec" width="150" height="80" style="display: block;" />
 										</a>
 									</td>
 									<td>
@@ -76,7 +76,7 @@
 							<tr><td>
 									<span>
 									<p style="color:white; text-align:left">
-									en dos ruedas 2014
+									en dos ruedas 2020
 									</p> 
 									</span>	
 								</td>
