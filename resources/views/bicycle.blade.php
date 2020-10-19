@@ -6,10 +6,10 @@ Bicicletas y Motocicletas
 @stop
 
 @section('content')
-{!! HTML::script('js/jquery/searchableSelect/bootstrap-select.min.js') !!}
+<script type="text/javascript" href="{{ secure_asset('js/jquery/searchableSelect/bootstrap-select.min.js') }}"></script>
 
-{!! HTML::style('css/searchableSelect/bootstrap-select.min.css'); !!}
-{!! HTML::script('js/jquery/jquery.preimage.js') !!}
+<link rel="stylesheet" href="{{ secure_asset('css/searchableSelect/bootstrap-select.min.css'); }}">
+<script type="text/javascript" href="{{ secure_asset('js/jquery/jquery.preimage.js') }}"></script>
 <div class="container">
 		<?php if (Auth::check()){ ?>
 		<ul class="nav nav-tabs" id="product">

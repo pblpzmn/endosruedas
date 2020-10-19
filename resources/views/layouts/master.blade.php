@@ -9,12 +9,12 @@
 		<meta name="Keywords" content="endosruedas,dos,2,2ruedas,2 ruedas,dosruedas,www.endosruedas.com,www.endosruedas.com.ec,dos ruedas,Ecuador,ecuador,publica,publicar,compra,comprar,venta,vender,bicileta,biciletas,bici,bicis,motocicleta,motocicletas,moto,motos"/>
 		<meta name="robots" content="index,follow">
 		<!-- CSS are placed here -->
-		{!! HTML::style('bootstrap/css/bootstrap.css') !!}
-		{!! HTML::style('bootstrap/css/bootstrap-responsive.css') !!}
-		{!! HTML::style('css/app.css') !!}
+		<link rel="stylesheet" href="{{ secure_asset('bootstrap/css/bootstrap.css') }}">
+		<link rel="stylesheet" href="{{ secure_asset('bootstrap/css/bootstrap-responsive.css')}}">
+		<link rel="stylesheet" href="{{ secure_asset('css/app.css')}}">
 
 		<!-- js are placed here -->
-		{!! HTML::script('js/jquery/jquery-1.11.0.min.js') !!}
+		<script type="text/javascript" href="{{ secure_asset('js/jquery/jquery-1.11.0.min.js')}}"></script>
 	</head>
 
 	<body>
@@ -227,11 +227,11 @@
 
 		<!-- Scripts are placed here -->
 
-		{!! HTML::script('bootstrap/js/bootstrap.min.js') !!}
-		{!! HTML::script('js/jquery/validate/jquery.validate.min.js') !!}
-		{!! HTML::script('js/jquery/validate/messages_es.js') !!}
-		{!! HTML::script('js/jquery/jquery.cookie.js') !!}
-		{!! HTML::script('js/app.js') !!}
+		<script type="text/javascript" href="{{ secure_asset('bootstrap/js/bootstrap.min.js') }}"></script>
+		<script type="text/javascript" href="{{ secure_asset('js/jquery/validate/jquery.validate.min.js') }}"></script>
+		<script type="text/javascript" href="{{ secure_asset('js/jquery/validate/messages_es.js') }}"></script>
+		<script type="text/javascript" href="{{ secure_asset('js/jquery/jquery.cookie.js') }}"></script>
+		<script type="text/javascript" href="{{ secure_asset('js/app.js') }}"></script>
 
 	</body>
 </html>
