@@ -15,6 +15,17 @@
 
 		<!-- js are placed here -->
 		{!! HTML::script('js/jquery/jquery-1.11.0.min.js') !!}
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYPMHK4PEK"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-SYPMHK4PEK');
+		</script>
 	</head>
 
 	<body>
